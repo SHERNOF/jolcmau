@@ -1,6 +1,6 @@
 
 import { Button, Container } from "@mui/material";
-import { indigo } from "@mui/material/colors";
+import { indigo, pink } from "@mui/material/colors";
 import React from "react";
 import Header from "./components/header/Header";
 import './App.css'
@@ -11,6 +11,7 @@ const myTheme = createTheme({
   palette: {
     primary: {
       main: indigo[500],
+
     },
   },
   typography: {
@@ -31,7 +32,7 @@ function App() {
         <Container>
           <Header></Header>
           <Frontpage></Frontpage>
-          {/* <Button variant='contained'>SUBMIT</Button> */}
+          <Button type='submit' variant='contained'>SUBMIT</Button>
         </Container>
       </div>
     </ThemeProvider>

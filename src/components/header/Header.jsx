@@ -14,7 +14,6 @@ export default function Header() {
           <li>
             <Button
               className={classes.myBtn}
-              className={classes.myBtn}
               variant="text"
               activeclass="active"
               to="home"

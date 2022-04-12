@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material";
+import { Button, Typography } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 import React from "react";
 import LogoMain from "../logoMain/LogoMain";
@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 
 const useStyle = makeStyles(() => ({
   txt: {
-    textAlign: "left",
     width: "100%",
+    marginBottom: "1rem",
   },
 }));
 
@@ -36,7 +36,7 @@ export default function Frontpage() {
               For we are to God the fragrance of Christ among those who are
               being saved and among those who are perishing.
             </Typography>
-            <Typography className={klases.txt} variant="subtitle1">
+            <Typography className={klases.txt} variant="h5">
               2 Corinthians 2:15 NKJV
             </Typography>
           </div>
