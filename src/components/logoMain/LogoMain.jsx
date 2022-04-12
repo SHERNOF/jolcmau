@@ -14,7 +14,7 @@ export default function LogoMain() {
     visible: {
       pathLength: 1,
       fill: "rgb(70, 118, 187,1)",
-      transition: { duration: 5 },
+      transition: { duration: 4 },
       ease: "easeInOut",
     },
   };

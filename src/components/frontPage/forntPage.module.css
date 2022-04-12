@@ -36,11 +36,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: left;
   height: 90%;
   width: 45%;
   color: white;
   font-size: 3rem;
 }
+/* .txt {
+  text-align: left;
+  border: 1px solid red;
+  width: 100%;
+} */
 /* .right {
   
   display: flex;

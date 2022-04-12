@@ -62,7 +62,11 @@
 }
 
 .myUl li {
-  margin-left: 2rem;
+  margin-left: 1.5rem;
+}
+
+.myBtn {
+  font-size: 0.65rem;
 }
 
 @keyframes spinner {

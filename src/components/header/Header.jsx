@@ -12,27 +12,38 @@ export default function Header() {
       <div className={classes.headerLinks}>
         <ul className={classes.myUl}>
           <li>
-            <Button variant="text" activeclass="active" to="home">
+            <Button
+              className={classes.myBtn}
+              className={classes.myBtn}
+              variant="text"
+              activeclass="active"
+              to="home"
+            >
               Home
             </Button>
           </li>
           <li>
-            <Button variant="text" to="about">
+            <Button className={classes.myBtn} variant="text" to="about">
               About us
             </Button>
           </li>
           <li>
-            <Button variant="text" to="ministries">
+            <Button className={classes.myBtn} variant="text" to="ministries">
               Ministries
             </Button>
           </li>
           <li>
-            <Button variant="text" href="events">
+            <Button className={classes.myBtn} variant="text" href="events">
               Contact Us
             </Button>
           </li>
           <li>
-            <Button variant="text" to="events" href="events">
+            <Button
+              className={classes.myBtn}
+              variant="text"
+              to="events"
+              href="events"
+            >
               Events
             </Button>
           </li>
