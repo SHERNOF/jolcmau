@@ -6,22 +6,21 @@ export default function LogoMain() {
   const icon = {
     hidden: {
       pathLength: 0,
-      fill: "rgb(70, 118, 187,0)",
+      fill: "rgba(0, 188, 212,0)",
     },
     half: {
-      fill: "rgb(70, 118, 187,0.5)",
+      fill: "rgba(0, 188, 212,.5)",
     },
     visible: {
       pathLength: 1,
-      fill: "rgb(70, 118, 187,1)",
-      transition: { duration: 4 },
+      fill: "rgba(0, 188, 212,1)",
+      transition: { duration: 1.5 },
       ease: "easeInOut",
     },
   };
   return (
     <div className={classes.imgContainer}>
       <motion.svg
-        className={classes.jolLogo}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 595.28 841.89"
         variants={icon}
@@ -651,7 +650,7 @@ export default function LogoMain() {
             }}
             variants={icon}
             fill="none"
-            class="st0"
+            className="st0"
             d="M466.45,360.96"
           />
           <motion.path
@@ -663,7 +662,7 @@ export default function LogoMain() {
             }}
             variants={icon}
             fill="none"
-            class="st0"
+            className="st0"
             d="M205.05,349.1"
           />
           <motion.path
@@ -675,7 +674,7 @@ export default function LogoMain() {
             }}
             variants={icon}
             fill="none"
-            class="st0"
+            className="st0"
             d="M204.9,349.99"
           />
           <motion.path
@@ -687,7 +686,7 @@ export default function LogoMain() {
             }}
             variants={icon}
             fill="none"
-            class="st0"
+            className="st0"
             d="M102.5,365.91"
           />
           <motion.path
@@ -699,7 +698,7 @@ export default function LogoMain() {
             }}
             variants={icon}
             fill="none"
-            class="st0"
+            className="st0"
             d="M102.66,365.02"
           />
           <motion.path
@@ -711,7 +710,7 @@ export default function LogoMain() {
             }}
             variants={icon}
             fill="none"
-            class="st0"
+            className="st0"
             d="M130.74,371.25"
           />
           <motion.path
@@ -723,7 +722,7 @@ export default function LogoMain() {
             }}
             variants={icon}
             fill="none"
-            class="st0"
+            className="st0"
             d="M131.04,370.39"
           />
           <motion.path
@@ -735,7 +734,7 @@ export default function LogoMain() {
             }}
             variants={icon}
             fill="none"
-            class="st0"
+            className="st0"
             d="M109.43,376.52"
           />
           <motion.path
@@ -747,7 +746,7 @@ export default function LogoMain() {
             }}
             variants={icon}
             fill="none"
-            class="st0"
+            className="st0"
             d="M109.12,377.38"
           />
           <motion.path
@@ -759,7 +758,7 @@ export default function LogoMain() {
             }}
             variants={icon}
             fill="none"
-            class="st0"
+            className="st0"
             d="M492.93,376.52"
           />
           <motion.path
@@ -1046,14 +1045,14 @@ export default function LogoMain() {
         transition={{
           default: { duration: 2, ease: "easeInOut" },
           fill: { duration: 2, ease: [1, 0, 0.8, 1] }
-        }} variants={icon} fill="none" class="st2" d="M434,311.29" />
+        }} variants={icon} fill="none" className="st2" d="M434,311.29" />
             <motion.path
             initial="hidden"
         animate="visible"
         transition={{
           default: { duration: 2, ease: "easeInOut" },
           fill: { duration: 2, ease: [1, 0, 0.8, 1] }
-        }} variants={icon} fill="none" class="st2" d="M446.43,308.33" /> */}
+        }} variants={icon} fill="none" className="st2" d="M446.43,308.33" /> */}
           <motion.path
             initial="hidden"
             animate="visible"

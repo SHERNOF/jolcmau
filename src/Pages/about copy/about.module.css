@@ -1,0 +1,106 @@
+.about {
+  height: 80vh;
+  width: 100vw;
+  position: relative;
+}
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+.top,
+.bottom {
+  display: flex;
+}
+.box {
+  width: 49vw;
+  height: 40vh;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box1Content,
+.box2Content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2rem 2rem;
+  height: 90%;
+  width: 100%;
+  border: 1px solid rgb(24, 255, 255, 0.1);
+  font-size: 2rem;
+  border-radius: 5px;
+  /* background: #212121; */
+
+  perspective: 80px;
+  outline: none;
+
+  box-shadow: 8px 8px 16px var(--scd), -8px -8px 16px #2a2a2a;
+
+  background: var(--scd) radial-gradient(var(--scd), #212121);
+}
+.box3Content,
+.box4Content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 2rem;
+  height: 90%;
+  width: 100%;
+  border: 1px solid rgb(24, 255, 255, 0.1);
+  font-size: 2rem;
+  border-radius: 5px;
+  background: #212121;
+  box-shadow: 8px 8px 16px #181818, -8px -8px 16px #2a2a2a;
+}
+
+.box5 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 36rem;
+  height: 36rem;
+  z-index: 2;
+  background: var(--scd);
+  border: 1px solid rgb(24, 255, 255, 0.1);
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box5 img {
+  width: 95%;
+  height: 95%;
+  border-radius: 50%;
+}
+.box4Content {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.box4Container {
+  width: 90%;
+  height: 90%;
+}
+
+.circle {
+  float: left;
+  top: 5rem;
+  width: 15rem;
+  height: 15rem;
+  shape-outside: circle(50%);
+}
