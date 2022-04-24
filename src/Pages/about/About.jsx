@@ -160,7 +160,11 @@ export default function About({ componentVisible, handleVisibility }) {
           <div animate={animation} ref={ref}>
             <div className={classes.content}>
               <div className={classes.top}>
-                <div className={classes.box}>
+                <motion.div
+                  className={classes.box}
+                  initial="hidden"
+                  animate={animation}
+                >
                   <div className={classes.box1Content} initial="hidden">
                     <motion.h1
                       className={klas.txt}
@@ -177,8 +181,12 @@ export default function About({ componentVisible, handleVisibility }) {
                       To share life in Christ Jesus with great joy to all.
                     </motion.p>
                   </div>
-                </div>
-                <div className={classes.box}>
+                </motion.div>
+                <motion.div
+                  className={classes.box}
+                  initial="hidden"
+                  animate={animation}
+                >
                   <div className={classes.box2Content}>
                     <motion.h1
                       className={klas.txt}
@@ -195,7 +203,7 @@ export default function About({ componentVisible, handleVisibility }) {
                       To see Christ-like people living in fullness of joy.
                     </motion.p>
                   </div>
-                </div>
+                </motion.div>
               </div>
               <div className={classes.bottom}>
                 <motion.div
