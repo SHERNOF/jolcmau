@@ -1,6 +1,6 @@
 import classes from "./about.module.css";
 import { useInView } from "react-intersection-observer";
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 // import AboutContent from "../aboutContent/AboutContent";
 import { AnimatePresence, motion, useAnimation } from "framer-motion";
@@ -113,10 +113,10 @@ const spanVariants = {
   },
 };
 
-export default function About({ aboutHandle }) {
+export default function About({ componentVisible, handleVisibility }) {
   const [appear, setAppear] = useState(true);
   const clickHandle = () => {
-    setAppear(false);
+    setAppear(!appear);
   };
 
   const klas = useStyle();
@@ -140,113 +140,137 @@ export default function About({ aboutHandle }) {
   }, [animation, inView]);
 
   return (
-    <div className={classes.about} ref={ref}>
-      <motion.div animate={animation}>
-        <div className={classes.content}>
-          <div className={classes.top}>
-            <div className={classes.box}>
-              <div className={classes.box1Content} initial="hidden">
-                <motion.h1
-                  className={klas.txt}
-                  initial="hidden"
-                  animate={animation}
-                >
-                  VISION
-                </motion.h1>
-                <motion.p
-                  className={klas.pTxt}
-                  initial="hidden"
-                  animate={animation}
-                >
-                  To share life in Christ Jesus with great joy to all.
-                </motion.p>
+    <AnimatePresence exitBeforeEnter>
+      {componentVisible && (
+        <motion.div
+          className={classes.about}
+          initial={{ x: "-100vw", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{
+            x: "-100vw",
+            opacity: 0,
+          }}
+          transition={{
+            duration: 2,
+            type: "spring",
+            bounce: 0.2,
+            ease: "easeInOut",
+          }}
+        >
+          <div animate={animation} ref={ref}>
+            <div className={classes.content}>
+              <div className={classes.top}>
+                <div className={classes.box}>
+                  <div className={classes.box1Content} initial="hidden">
+                    <motion.h1
+                      className={klas.txt}
+                      initial="hidden"
+                      animate={animation}
+                    >
+                      VISION
+                    </motion.h1>
+                    <motion.p
+                      className={klas.pTxt}
+                      initial="hidden"
+                      animate={animation}
+                    >
+                      To share life in Christ Jesus with great joy to all.
+                    </motion.p>
+                  </div>
+                </div>
+                <div className={classes.box}>
+                  <div className={classes.box2Content}>
+                    <motion.h1
+                      className={klas.txt}
+                      initial="hidden"
+                      animate={animation}
+                    >
+                      MISSION
+                    </motion.h1>
+                    <motion.p
+                      className={klas.pTxt}
+                      initial="hidden"
+                      animate={animation}
+                    >
+                      To see Christ-like people living in fullness of joy.
+                    </motion.p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div className={classes.box}>
-              <div className={classes.box2Content}>
-                <motion.h1
-                  className={klas.txt}
+              <div className={classes.bottom}>
+                <motion.div
+                  className={classes.box}
                   initial="hidden"
                   animate={animation}
                 >
-                  MISSION
-                </motion.h1>
-                <motion.p
-                  className={klas.pTxt}
+                  <div className={classes.box3Content}>
+                    <motion.div initial="hidden" animate={animation}>
+                      <Button onClick={handleVisibility}>Test</Button>
+                    </motion.div>
+                  </div>
+                </motion.div>
+                <motion.div
+                  className={classes.box}
                   initial="hidden"
                   animate={animation}
                 >
-                  To see Christ-like people living in fullness of joy.
-                </motion.p>
-              </div>
-            </div>
-          </div>
-          <div className={classes.bottom}>
-            <div className={classes.box}>
-              <div className={classes.box3Content}>
-                <motion.div initial="hidden" animate={animation}>
-                  <Button onClick={aboutHandle}>Test</Button>
+                  <div className={classes.box4Content}>
+                    <div className={classes.box4Container}>
+                      <div className={classes.circle}></div>
+                      <h3 className={klas.txt2} variants={typVariants}>
+                        WHO WE ARE
+                      </h3>
+                      <motion.p className={klas.pTxt2}>
+                        A church is a group of people who are, joyfully
+                        together. We’re together with God because of His
+                        kindness and commitment to humanity; together as a
+                        family learning to embody this kindness and commitment
+                        one to another and beyond into the wider world. All this
+                        is only possible because of Jesus, the One who brings us
+                        together in life and keeps us together joyfully. Joy Of
+                        Life Christian Ministries is a community church of
+                        imperfect people seeking to know and love Jesus more.{" "}
+                        <Button
+                          onClick={clickHandle}
+                          variant="text"
+                          className={`${!appear ? klas.hidden : klas.btn}`}
+                        >
+                          ...Read More
+                        </Button>
+                        <motion.span
+                          className={klas.pTxt3}
+                          initial="hidden"
+                          animate={appear ? "hidden" : "visible"}
+                          variants={spanVariants}
+                        >
+                          We gather and serve in Craigieburn, Victoria,
+                          Australia. We meet each Sunday, connect during the
+                          week in Care Groups/Prayer Meetings and serve in the
+                          community and surrounding areas. We are guided by
+                          seven central values. They reflect both who we are and
+                          who we hope to be.
+                        </motion.span>
+                      </motion.p>
+                    </div>
+                  </div>
                 </motion.div>
               </div>
             </div>
-            <motion.div
-              className={classes.box}
+
+            <div
+              className={classes.box5}
+              variants={typVariants}
               initial="hidden"
               animate={animation}
             >
-              <div className={classes.box4Content}>
-                <div className={classes.box4Container}>
-                  <div className={classes.circle}></div>
-                  <h3 className={klas.txt2} variants={typVariants}>
-                    WHO WE ARE
-                  </h3>
-                  <motion.p className={klas.pTxt2}>
-                    A church is a group of people who are, joyfully together.
-                    We’re together with God because of His kindness and
-                    commitment to humanity; together as a family learning to
-                    embody this kindness and commitment one to another and
-                    beyond into the wider world. All this is only possible
-                    because of Jesus, the One who brings us together in life and
-                    keeps us together joyfully. Joy Of Life Christian Ministries
-                    is a community church of imperfect people seeking to know
-                    and love Jesus more.{" "}
-                    <Button
-                      onClick={clickHandle}
-                      variant="text"
-                      className={`${appear ? klas.hidden : klas.btn}`}
-                    >
-                      ...Read More
-                    </Button>
-                    <motion.span
-                      className={klas.pTxt3}
-                      initial="hidden"
-                      animate={!appear ? "hidden" : "visible"}
-                      variants={spanVariants}
-                    >
-                      We gather and serve in Craigieburn, Victoria, Australia.
-                      We meet each Sunday, connect during the week in Care
-                      Groups/Prayer Meetings and serve in the community and
-                      surrounding areas. We are guided by seven central values.
-                      They reflect both who we are and who we hope to be.
-                    </motion.span>
-                  </motion.p>
-                </div>
+              <div className={classes.imageContainer}>
+                <img alt="worsship" src="img/worshipc.jpg"></img>
               </div>
-            </motion.div>
+            </div>
           </div>
-        </div>
-
-        <div
-          className={classes.box5}
-          variants={typVariants}
-          initial="hidden"
-          animate={animation}
-        >
-          <div className={classes.imageContainer}>
-            <img alt="worsship" src="img/worshipc.jpg"></img>
-          </div>
-        </div>
-      </motion.div>
-    </div>
+          {/* </motion.div> */}
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }

@@ -7,11 +7,7 @@ import Header from "./components/header/Header";
 import About from "./Pages/about/About";
 import { BrowserRouter, Route, Routes, } from "react-router-dom";
 import Services from "./Pages/services/Services";
-import AboutContent from "./Pages/aboutContent/AboutContent";
 import Details from "./Pages/Details/Details";
-import { AnimatePresence, motion } from "framer-motion";
-
-
 
 const myTheme = createTheme({
   palette: {
@@ -40,28 +36,30 @@ function App() {
       setShowHeader(true);
     }
   };
-  const [aboutAppear, setAboutAppear] = useState(true)
-  const aboutHandle = () => {
-    setAboutAppear(!aboutAppear)
-    console.log('jedi')
-  }
+  const [componentVisible, setComponentVisible] = useState(true)
+  const handleVisibility = () => {
+    setComponentVisible(!componentVisible);
+    console.log(componentVisible)
+  };
 
-  // const details = [details, setDetails] = useState(false)
   return (
     <ThemeProvider theme={myTheme}>
 
       <div className='App' onWheel={scrollMe}>
         <Header showHeader={showHeader} />
-        <BrowserRouter>
-          <Routes>
+        <BrowserRouter >
+          <Routes >
             <Route exact path='/' element={<Frontpage />} />
           </Routes>
-
-          {aboutAppear ?
-            <About aboutHandle={aboutHandle} />
-            :
-            <Details aboutHandle={aboutHandle} />
+          {
+            componentVisible ?
+              <About componentVisible={componentVisible} handleVisibility={handleVisibility} />
+              :
+              <Details handleVisibility={handleVisibility} componentVisible={componentVisible} />
           }
+
+
+
 
           <Services></Services>
         </BrowserRouter>
